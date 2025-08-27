@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <style>
+    body{
+        background-color: blueviolet;
+    }
+    div{
+        margin-left: 500px;
+        margin-top: 200px;
+        width: 300px;
+        position: absolute;
+        
+    }
+     input {
+      width: 90%;
+      padding: 12px 12px 12px 40px;
+      border-radius: 30px;
+      border: none;
+
+      
+      background-color: white;
+      font-size: 16px;
+      overflow: hidden;
+    }
+    i{
+      position: absolute;
+      left: 80%;
+      bottom: 15%;
+      font-size: 25px;
+    }
+   
+
+  </style>
+</head>
+<body>
+   <div>
+  <input type="password" id="text"  placeholder="Enter The password">
+  <i class="ri-eye-off-fill" id="icon" ></i>
+</div>
+<script>
+  let input=document.getElementById("text")
+  let icon=document.getElementById("icon")
+  icon.addEventListener("click",()=>{
+    if(input.type=="password"){
+      input.type="text"
+      icon.classList.remove("ri-eye-off-fill")
+      icon.classList.add("ri-eye-fill")
+    }
+    else{
+      input.type="password"
+      icon.classList.remove("ri-eye-fill")
+      icon.classList.add("ri-eye-off-fill")
+    }
+  })
+  icon.addEventListener("mouseover", () => input.type = "text");
+icon.addEventListener("mouseout", () => input.type = "password");
+
+</script>
+
+
+
+    
+</body>
+</html>
