@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dark Mode Toggle</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    #nav {
+      height: 120px;
+    }
+
+    ul {
+      position: absolute;
+      width: 900px;
+      display: flex;
+      margin-left: 600px;
+    }
+
+    li {
+      margin-left: 20px;
+      list-style: none;
+      font-size: 20px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+    }
+
+    .moon {
+      height: 20px;
+      margin-left: 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    #second {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      margin-left: 100px;
+      font-size: 60px;
+      margin-top: -35px;
+    }
+
+    pre {
+      font-size: 20px;
+      margin-left: 35px;
+    }
+
+    #last img {
+      border-radius: 90%;
+    }
+
+    .hero-img {
+      margin-left: 700px;
+      display: inline-block;
+      height: 500px;
+      border-radius: 15px;
+      position: absolute;
+      top: 10%;
+      left: 15%;
+    }
+
+    #third {
+      height: 100px;
+      margin-bottom: 60px;
+      padding: 20px 0;
+    }
+  
+
+    .kate {
+      color: orange;
+    }
+
+    button {
+      background-color: black;
+      color: white;
+      border: none;
+      margin-top:15px;
+      margin-left: 90px;
+      height: 50px;
+      text-align: center;
+      cursor: pointer;
+      width: 20%;
+      border-radius: 15px;
+    }
+    .hero-img:hover {
+  transform: translateY(-10px);
+  
+}
+
+    #third i {
+      height: 100px;
+
+      margin: 15px;
+      border-radius: 10px;
+      font-size: 60px;
+    }
+    i:hover{
+      color: orange;
+      cursor: pointer;
+    }
+
+    #last {
+      margin-left: 70px;
+    }
+
+    #png {
+      height: 50px;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="nav">
+    <ul>
+      <li>HOME</li>
+      <li>ABOUT</li>
+      <li>PORTFOLIO</li>
+      <li>SERVICES</li>
+      <li>
+        HIRE ME
+        <div class="moon" id="moon"><i class="ri-moon-line"></i></div>
+      </li>
+    </ul>
+  </div>
+
+  <div id="second">
+    <h1>I'm <span class="kate">Kate</span> Amelia</h1>
+    <pre>     This is my official website to showcase all my work
+     related to web development and UI design</pre>
+    <button id="btn">Download CV</button>
+    <img src="/imges/women.png" alt="" class="hero-img">
+  </div>
+
+  <div id="third">
+    <div id="last">
+      <i class="ri-linkedin-box-fill"></i>
+      <i class="ri-instagram-fill"></i>
+      <i class="ri-whatsapp-fill"></i>
+    </div>
+  </div>
+
+  <script>
+    const moonIcon = document.getElementById("moon");
+    const btn = document.getElementById("btn");
+
+    moonIcon.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+        document.body.style.backgroundColor = "#121212";
+        document.body.style.color = "white";
+        moonIcon.innerHTML = '<i class="ri-sun-line"></i>';
+        btn.style.backgroundColor = "orange";
+      } else {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        moonIcon.innerHTML = '<i class="ri-moon-line"></i>';
+        btn.style.backgroundColor = "black";
+      }
+    });
+  </script>
+</body>
+</html>
