@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Date Card</title>
+  <style>
+    body {
+      background: black;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #first {
+      background-color: white;
+      height: 200px;
+      width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3px solid black;
+    }
+
+    #second, #third {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #second {
+       background: linear-gradient( #ff416c, #ff4b2b);
+      color: white;
+    }
+
+    #third {
+      background: linear-gradient( #43cea2, #185a9d); 
+      color: black;
+    }
+
+    p {
+      margin: 5px;
+      font-size: 25px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    #date {
+      font-size: 60px;
+      font-weight: bold;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="first">
+    <div id="second">
+      <p id="date">01</p>
+      <p id="day">Sunday</p>
+    </div>
+    <div id="third">
+      <p id="month">January</p>
+      <p id="year">2025</p>
+    </div>
+  </div>
+
+  <script>
+    let a = document.getElementById("date");
+    let b = document.getElementById("day");
+    let c = document.getElementById("month");
+    let d = document.getElementById("year");
+
+    const today = new Date();
+
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const months = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    a.innerHTML = today.getDate();
+    b.innerHTML = days[today.getDay()];
+    c.innerHTML = months[today.getMonth()];
+    d.innerHTML = today.getFullYear();
+  </script>
+</body>
+</html>
